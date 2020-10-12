@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecnovitate-Crear Noticia</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid sticky-top">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: rgb(15, 76, 155)"
+      >
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
+            loading="lazy"
+          />
+          Tecnovitate
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav nav-tabs mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Inicio <span class="sr-only">(current)</span></a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Buscar
+            </button>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0099/9562/files/Header-Icon-User.png?14597416339728210630"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="https://cdn.shopify.com/s/files/1/0099/9562/files/Header-Icon-User.png?14597416339728210630"
+              loading="lazy"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Usuario
+            </button>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="inputAddress"><h3>Titulo</h3></label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="Titulo"
+          />
+        </div>
+        <div class="form-group">
+            <label for="inputAddress"><h5>Descripción corta</h5></label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress"
+              placeholder="Descripción corta"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1"><h5>Noticia</h5></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1"><h5>Categorias</h5></label>
+          </div>
+          <div class="row">
+            <div class="form-check col-4">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  PC
+                </label>
+              </div>
+              <div class="form-check col-4">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Moviles
+                </label>
+              </div>
+              <div class="form-check col-4">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Hardware
+                </label>
+              </div>
+              <div class="form-check col-4">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Redes
+                </label>
+              </div>
+              <div class="form-check col-4">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Seguridad
+                </label>
+              </div>
+              <div class="form-check col-4">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Hogar
+                </label>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" ><h5>Imagenes</h5></label>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" >Imagen principal</label>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" >Imagen central</label>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" >Imagen final</label>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" ><h5>Video</h5></label>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+          </div>
+        <button type="submit" class="btn btn-primary">Mandar a revisión</button>
+      </form>
+    </div>
+  </body>
+</html>
