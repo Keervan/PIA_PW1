@@ -30,7 +30,6 @@ public class UsuarioDAO {
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getContraseña());
             statement.setString(4, "assets/image/anonimo.jpg");
-            //statement.setInt(5, 1);
             return statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
