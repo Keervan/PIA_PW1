@@ -58,6 +58,24 @@ public class Noticias {
         this.User = User;
     }
 
+    public Noticias(int id, String titulo, String descrip, String noticia, Categorias categoria, String path1, String path2, String path3, String pathv, int estado, int likes, int dislikes, Date fecha, Usuario User, String cambio) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descrip = descrip;
+        this.noticia = noticia;
+        this.categoria = categoria;
+        this.path1 = path1;
+        this.path2 = path2;
+        this.path3 = path3;
+        this.pathv = pathv;
+        this.estado = estado;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.fecha = fecha;
+        this.User = User;
+        this.cambio = cambio;
+    }
+
     public int getId() {
         return id;
     }

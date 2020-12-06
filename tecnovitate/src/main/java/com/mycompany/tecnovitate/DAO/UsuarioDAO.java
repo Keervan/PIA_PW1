@@ -25,12 +25,12 @@ public class UsuarioDAO {
         try {
             con = DbConnection.getConnection();
 //                                                      Stored procedure hecho
-            CallableStatement statement = con.prepareCall("CALL registrarse(?,?,?,?,?);");
+            CallableStatement statement = con.prepareCall("CALL registrarse(?,?,?,?);");
             statement.setString(1, user.getNombre_Usua());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getContraseña());
             statement.setString(4, "assets/image/anonimo.jpg");
-            statement.setInt(5, 1);
+            //statement.setInt(5, 1);
             return statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

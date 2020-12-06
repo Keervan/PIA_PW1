@@ -29,7 +29,7 @@ public class NoticiasDAO {
         Connection con = null;
         try {
             con = DbConnection.getConnection();
-            String sql = "CALL crearNoti(?,?,?,?,?,?,?,?,?);";
+            String sql = "CALL setNoticia(?,?,?,?,?,?,?,?,?);";
             CallableStatement statement = con.prepareCall(sql);
             statement.setString(1, news.getTitulo());
             statement.setString(2, news.getDescrip());
@@ -123,10 +123,11 @@ public class NoticiasDAO {
                 int dislikes = result.getInt(12);
                 Date fecha = result.getDate(13);
                 int idUser = result.getInt(14);
+                String cambio = result.getString(15);
                 Categorias category = CategoriasDAO.getCategoria(idCategory);
                 Usuario user = UsuarioDAO.IniSesion(idUser);
                 return new Noticias(id, title, description, noticia, category, pathImage1, pathImage2, pathImage3, pathV, 
-                        estado, likes, dislikes, fecha, user);
+                        estado, likes, dislikes, fecha, user, cambio);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -213,7 +214,7 @@ public class NoticiasDAO {
         Connection con = null;
         try {
             con = DbConnection.getConnection();
-            String sql = "CALL setCancelado(?,?);";
+            String sql = "CALL setCancelado(?);";
             CallableStatement statement = con.prepareCall(sql);
             statement.setInt(1, idNews);
             statement.setString(2, cambio);

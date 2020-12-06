@@ -29,7 +29,7 @@ public class ComentariosDAO {
         Connection con = null;
         try {
             con = DbConnection.getConnection();
-            String sql = "CALL crearComentario(?,?,?);";
+            String sql = "CALL setComentario(?,?,?);";
             CallableStatement statement = con.prepareCall(sql);
             
             statement.setString(1, commentary.getComentario());
@@ -69,12 +69,12 @@ public class ComentariosDAO {
             ResultSet result = statement.executeQuery();
             while(result.next()){
                 int id = result.getInt(1);
-                String content = result.getString(2);
+                int idUser = result.getInt(2);
                 Date fecha = result.getDate(3);
-                int likes = result.getInt(4);
-                int dislikes = result.getInt(5);
-                int idUser = result.getInt(6);
-                int idNew = result.getInt(7);
+                String content = result.getString(4);
+                int idNew = result.getInt(5);
+                int likes = result.getInt(6);
+                int dislikes = result.getInt(7);
                 Usuario user = UsuarioDAO.IniSesion(idUser);
                 commentaries.add(new Comentarios(id, user, fecha, content, idNew, likes, dislikes));
                 
