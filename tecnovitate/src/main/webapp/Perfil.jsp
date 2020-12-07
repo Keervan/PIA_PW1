@@ -20,31 +20,43 @@
         <div class="container">
             <div class="row">
                 
-                <h1 class="col-12">Bienvenido</h1>
+                <h1 class="col-12 text-center"><br>Bienvenido<br></h1>
                 <div id="carouselExampleControls" class="carousel slide col-12" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="<%= sesion.getPath()%>" class="rounded mx-auto d-block" alt="...">
+                            <img src="<%= sesion.getPath()%>" class="rounded mx-auto d-block w-5 h-5" alt="...">
                         </div>
                     </div>
                 </div>
-                <h2 class="col-12 text-center">Nombre Usuario: <%= sesion.getNombre_Usua()%></h2>
-                <h2 class="col-12 text-center">Correo: <%= sesion.getEmail()%></h2>
-                <h2 class="col-12 text-center">Redes Sociales: <% if (sesion.getRedes() != null) {%><%= sesion.getRedes()%><% } %></h2>
-                <h2 class="col-12 text-center">Descripción: <% if (sesion.getDescripcion() != null) {%><%= sesion.getDescripcion()%><% }%></h2>
+                <div class="container-md justify-content-md-center">
+                    <h3 class="col-12 text-center"><br>Nombre Usuario: <%= sesion.getNombre_Usua()%></h3>
+                    <h3 class="col-12 text-center"><br>Correo: <%= sesion.getEmail()%></h3>
+                    <h3 class="col-12 text-center"><br>Redes Sociales: <% if (sesion.getRedes() != null) {%><%= sesion.getRedes()%><% } %></h3>
+                    <h3 class="col-12 text-center"><br>Descripción: <% if (sesion.getDescripcion() != null) {%><%= sesion.getDescripcion()%><% }%><br></h3>
+                </div>
                 
-                    <div class="container justify-content-center">
-                        <div class="form-group">
-                         <form action="editUsuaController">
-                        <input type="submit" class="btn btn-primary col-3" value="Editar Información">
-                        </form>
-                        <form action="FavoritosController" >
-                           <input type="submit" class="btn btn-info col-3" value="Favoritos ">
-                            <input type="hidden" name="idUser" value="<%= sesion.getIdUsua()%>">
-                        </form>
-                         <form action="CerrarSesion" method="POST" >
-                           <input type="submit" class="btn btn-danger col-3" value="Cerrar Sesión">
-                        </form>
+                <div>
+                    
+                </div>
+                    <div class="container px-4">
+                        <div class="row justify-content-md-center">
+                            <div class="btn-group">
+                                <form action="editUsuaController">
+                                <input type="submit" class="btn btn-primary " value="Editar Información">
+                                </form>
+                            </div>
+                            <div class="btn-group">
+                                <form action="FavoritosController" >
+                                    <input type="submit" class="btn btn-info " value="Favoritos ">
+                                    <input type="hidden" name="idUser" value="<%= sesion.getIdUsua()%>">
+                                </form>
+                            </div>
+                            <div class="btn-group">
+                                <form action="CerrarSesion" method="POST" >
+                                    <input type="submit" class="btn btn-danger " value="Cerrar Sesión">
+                                </form>
+                            </div>
+                        
                          </div>
                     </div>
                 

@@ -13,7 +13,7 @@
     </head>
     <body>
         <jsp:include page="navbar.jsp"/>
-        <div class="container">
+        <div class="container-sm">
             <div class="row">
                 
                 <form class="col-12" action="RegistrarController" method="POST">
