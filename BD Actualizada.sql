@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `tecnovitate` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `tecnovitate`;
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tecnovitate
@@ -15,6 +17,162 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 USE tecnovitate;
+--
+-- Table structure for table `categorias`
+--
+
+DROP TABLE IF EXISTS `categorias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categorias` (
+  `idcategorias` int NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcategorias`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categorias`
+--
+
+LOCK TABLES `categorias` WRITE;
+/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
+INSERT INTO `categorias` VALUES (2,'CELULARES'),(3,'HARDWARE'),(4,'SOFTWARE'),(5,'VIDEOJUEGOS'),(6,'IA');
+/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comentarios`
+--
+
+DROP TABLE IF EXISTS `comentarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comentarios` (
+  `idcomentarios` int NOT NULL AUTO_INCREMENT,
+  `usuario` int DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  `cometario` text,
+  `noticia` int DEFAULT NULL,
+  `likes` int DEFAULT '0',
+  `dislikes` int DEFAULT '0',
+  PRIMARY KEY (`idcomentarios`),
+  KEY `fk_coment_usua_idx` (`usuario`),
+  CONSTRAINT `fk_coment_usua` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`idusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comentarios`
+--
+
+LOCK TABLES `comentarios` WRITE;
+/*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `favs`
+--
+
+DROP TABLE IF EXISTS `favs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `favs` (
+  `idfavs` int NOT NULL AUTO_INCREMENT,
+  `user` int DEFAULT NULL,
+  `noticia` int DEFAULT NULL,
+  PRIMARY KEY (`idfavs`),
+  KEY `fk_favs_noti_idx` (`noticia`),
+  CONSTRAINT `fk_favs_noti` FOREIGN KEY (`noticia`) REFERENCES `noticia` (`idnoticia`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `favs`
+--
+
+LOCK TABLES `favs` WRITE;
+/*!40000 ALTER TABLE `favs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `favs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `noticia`
+--
+
+DROP TABLE IF EXISTS `noticia`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `noticia` (
+  `idnoticia` int NOT NULL AUTO_INCREMENT,
+  `titulo` text,
+  `descripcion` text,
+  `noticia` text,
+  `categoria` int DEFAULT NULL,
+  `ima1` varchar(99) DEFAULT NULL,
+  `ima2` varchar(99) DEFAULT NULL,
+  `ima3` varchar(99) DEFAULT NULL,
+  `video` varchar(99) DEFAULT NULL,
+  `estadoNoticia` int DEFAULT '0',
+  `likes` int DEFAULT '0',
+  `dislikes` int DEFAULT '0',
+  `fecha` date DEFAULT NULL,
+  `user` int DEFAULT NULL,
+  `cambio` text,
+  PRIMARY KEY (`idnoticia`),
+  KEY `fk_noti_cat_idx` (`categoria`),
+  KEY `fk_noti_usa_idx` (`user`),
+  CONSTRAINT `fk_noti_cat` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`idcategorias`),
+  CONSTRAINT `fk_noti_usa` FOREIGN KEY (`user`) REFERENCES `usuario` (`idusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `noticia`
+--
+
+LOCK TABLES `noticia` WRITE;
+/*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
+INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,0,0,'2020-12-06',1,NULL);
+/*!40000 ALTER TABLE `noticia` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuario` (
+  `idusuario` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(60) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `contraseña` varchar(45) DEFAULT NULL,
+  `redes` text,
+  `avatar` varchar(99) DEFAULT NULL,
+  `descripcion` text,
+  `tipo_usua` int DEFAULT '1',
+  PRIMARY KEY (`idusuario`),
+  UNIQUE KEY `idusuario_UNIQUE` (`idusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'Moderador','moderador@moderador.com','moderador','fb.com/moderador','assets/images/foto1607247458368.jpg','Soy el moderador xd',2),(2,'Lessli','lessli@gmail.com','456',NULL,'assets/image/anonimo.jpg',NULL,1),(3,'Angel','angel@gmail.com','123',NULL,'assets/image/anonimo.jpg',NULL,1),(4,'Alejandro','alejandro@hotmail.com','789','','assets/images/foto1607247940761.jpg','',1);
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping events for database 'tecnovitate'
+--
+
 --
 -- Dumping routines for database 'tecnovitate'
 --
@@ -595,4 +753,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-06  4:16:21
+-- Dump completed on 2020-12-07  1:52:14
