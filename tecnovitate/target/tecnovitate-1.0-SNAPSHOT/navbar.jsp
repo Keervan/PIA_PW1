@@ -10,12 +10,19 @@
     Usuario sesion = (Usuario) session.getAttribute("logIn");
 %>
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary"style="background-color: rgb(15, 76, 155)">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="indexController">TECNOVITATE <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="indexController"><img
+          src="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
+          width="25"
+          height="25"
+          class="d-inline-block align-top"
+          alt="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
+          loading="lazy"
+        />TECNOVITATE <span class="sr-only">(current)</span></a>
             </li>
             <%
                 if (sesion != null) {

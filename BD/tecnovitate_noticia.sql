@@ -49,7 +49,7 @@ CREATE TABLE `noticia` (
 --
 -- Dumping data for table `noticia`
 --
-
+SELECT * FROM `noticia`;
 LOCK TABLES `noticia` WRITE;
 /*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
 INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,0,0,'2020-12-06',1,NULL);

@@ -18,7 +18,8 @@
 --
 -- Table structure for table `usuario`
 --
-
+CREATE DATABASE tecnovitate;
+USE tecnovitate;
 DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -39,7 +40,7 @@ CREATE TABLE `usuario` (
 --
 -- Dumping data for table `usuario`
 --
-
+SELECT * FROM `usuario`;
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` VALUES (1,'Moderador','moderador@moderador.com','moderador','fb.com/moderador','assets/images/foto1607247458368.jpg','Soy el moderador xd',2),(2,'Lessli','lessli@gmail.com','456',NULL,'assets/image/anonimo.jpg',NULL,1),(3,'Angel','angel@gmail.com','123',NULL,'assets/image/anonimo.jpg',NULL,1),(4,'Alejandro','alejandro@hotmail.com','789','','assets/images/foto1607247940761.jpg','',1);

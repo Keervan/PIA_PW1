@@ -14,7 +14,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
+USE tecnovitate;
 --
 -- Dumping routines for database 'tecnovitate'
 --
@@ -27,7 +27,7 @@
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `editarUsua`(
 IN `pNombre` varchar(60),
 IN `pEmail` varchar(60),
@@ -47,9 +47,8 @@ SET
 `avatar` = pAvatar,
 `descripcion` = pDescripcion
 WHERE `idusuario` = pIdusuario
-AND
-`contraseña` = pContraseña;
-END ;;
+AND `contraseña` = pContraseña;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -64,14 +63,14 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarComentario`(
 IN `pIdcomentarios` int)
 BEGIN
 DELETE FROM `tecnovitate`.`comentarios`
 WHERE `idcomentarios` = pIdcomentarios;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -86,14 +85,14 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarFav`(
 IN `pIdfavs` int)
 BEGIN
 DELETE FROM `tecnovitate`.`favs`
 WHERE `idfavs` = pIdfavs;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -108,7 +107,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getCategoria`(
 IN `pIdcategorias` int)
 BEGIN
@@ -117,7 +116,7 @@ SELECT `categorias`.`idcategorias`,
 FROM `tecnovitate`.`categorias`
 where `categorias`.`idcategorias` = pIdcategorias;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -132,14 +131,14 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER &&
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getCategorias`()
 BEGIN
 SELECT `categorias`.`idcategorias`,
     `categorias`.`categoria`
 FROM `tecnovitate`.`categorias`;
 
-END ;;
+END &&
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -154,7 +153,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER &&
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getComentariosByNew`(
 IN `pIdNew` int)
 BEGIN
@@ -168,7 +167,7 @@ SELECT `comentarios`.`idcomentarios`,
 FROM `tecnovitate`.`comentarios`
 where `comentarios`.`noticia` = pIdNew;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -183,7 +182,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getFavs`(
 IN `pUser` int)
 BEGIN
@@ -193,7 +192,7 @@ SELECT `favs`.`idfavs`,
 FROM `tecnovitate`.`favs`
 where `favs`.`user` = pUser;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -208,7 +207,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getFavsAll`()
 BEGIN
 SELECT `favs`.`idfavs`,
@@ -216,7 +215,7 @@ SELECT `favs`.`idfavs`,
     `favs`.`noticia`
 FROM `tecnovitate`.`favs`;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -231,7 +230,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getNoticia`(
 IN `idnoticia` int)
 BEGIN
@@ -252,7 +251,7 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`cambio`
 FROM `tecnovitate`.`noticia`;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -267,7 +266,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getNoticias`()
 BEGIN
 SELECT `noticia`.`idnoticia`,
@@ -287,7 +286,7 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`cambio`
 FROM `tecnovitate`.`noticia`
 WHERE `noticia`.`estadoNoticia` = 1;
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -302,7 +301,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getNotiPendientes`()
 BEGIN
 SELECT `noticia`.`idnoticia`,
@@ -321,7 +320,7 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`user`
 FROM `tecnovitate`.`noticia`
 where `noticia`.`estadoNoticia` = 0;
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -336,7 +335,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `iniSesion`(
 IN `pEmail` varchar(60),
 IN `pContraseña` varchar(45))
@@ -354,7 +353,7 @@ where `usuario`.`email` = pEmail
 and
     `usuario`.`contraseña` = pContraseña;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -369,7 +368,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `iniSesionId`(
 IN `pIdusuario` int)
 BEGIN
@@ -383,7 +382,7 @@ SELECT `usuario`.`idusuario`,
     `usuario`.`tipo_usua`
 FROM `tecnovitate`.`usuario`
 Where `usuario`.`idusuario` = pIdusuario;
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -398,7 +397,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registrarse`(
 IN `pNombre` varchar(60),
 IN `pEmail` varchar(60),
@@ -418,7 +417,7 @@ pEmail,
 pContraseña,
 pAvatar);
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -433,7 +432,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setAceptado`(
 IN `pIdnoticia` int)
 BEGIN
@@ -442,7 +441,7 @@ SET
 `estadoNoticia` = 1
 WHERE `idnoticia` = pIdnoticia;
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -457,7 +456,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setCancelado`(
 IN `pIdnoticia` int)
 BEGIN
@@ -465,7 +464,7 @@ UPDATE `tecnovitate`.`noticia`
 SET
 `estadoNoticia` = 2
 WHERE `idnoticia` = pIdnoticia;
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -480,7 +479,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setComentario`(
 IN `pCometario` text,
 IN `pUsuario` int,
@@ -499,7 +498,7 @@ NOW(),
 pCometario,
 pNoticia);
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -514,7 +513,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setFav`(
 IN `pUser` int,
 IN `pNoticia` int)
@@ -528,7 +527,7 @@ VALUES
 pUser,
 pNoticia);
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -543,7 +542,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setNoticia`(
 IN `pTitulo` text,
 IN `pDescripcion` text,
@@ -580,7 +579,7 @@ pVideo,
 NOW(),
 pUser);
 
-END ;;
+END $$
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
