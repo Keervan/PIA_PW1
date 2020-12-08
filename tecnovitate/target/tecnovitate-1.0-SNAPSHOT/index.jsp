@@ -20,27 +20,26 @@
         <jsp:include page="navbar.jsp"/>
         <div class="container">
             <div class="row">
-                <%
-                    for (Noticias element : noticias) {
-                %>
-                <div
-                    id="carouselExampleCaptions"
-                    class="carousel slide"
-                    data-ride="carousel"
-                    >
-                    <ol class="carousel-indicators">
-                        <li
-                            data-target="#carouselExampleCaptions"
-                            data-slide-to="0"
-                            class="active"
-                            ></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    </ol>
+                <div class="carousel-inner">
+
                     <%
-                        for (int i = 0; i < 3; i++) {
+                        int i = 0;
+                        for (Noticias element : noticias) {
                     %>
-                    <div class="carousel-inner">
+                    <div
+                        id="carouselExampleCaptions"
+                        class="carousel slide"
+                        data-ride="carousel"
+                        >
+                        <ol class="carousel-indicators">
+                            <li
+                                data-target="#carouselExampleCaptions"
+                                data-slide-to="0"
+                                class="active"
+                                ></li>
+                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                        </ol>
                         <div class="carousel-item active">
                             <img
                                 src=<%= element.getPath1()%>
@@ -54,6 +53,24 @@
                             </div>
                         </div>
                         <%
+                            if (i < 3) {
+                        %>
+
+                        <div class="carousel-item">
+                            <img
+                                src=<%= element.getPath1()%>
+                                class="d-block w-100"
+                                height="500"
+                                alt=<%= element.getPath1()%>
+                                />
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><%= element.getTitulo()%></h5>
+                                <p><%= element.getDescrip()%></p>
+                            </div>
+                        </div>
+
+                        <%
+                            i = i + 1;
                             }
                         %>
                     </div>
@@ -77,6 +94,7 @@
                     </a>
                 </div>
                 <%
+                        
                     }
                 %>
 
@@ -87,7 +105,7 @@
                     <a href="NoticiaMostrarController?id=<%= element.getId()%>">
                         <div class="row no-gutters">
                             <%
-                                for (int i = 0; i < 3; i++) {
+                                for (int j = 0; j < 3; j++) {
                             %>
                             <div class="card col-md-4" style="width: 18rem; ">
                                 <img src="<%= element.getPath1()%>" class="card-img-top" alt="<%= element.getPath1()%>">
@@ -107,7 +125,7 @@
                     <a href="NoticiaMostrarController?id=<%= element.getId()%>">
                         <div class="row no-gutters">
                             <%
-                                for (int i = 0; i < 3; i++) {
+                                for (int j = 0; j < 3; j++) {
                             %>
                             <div class="col-md-6">
                                 <img src="<%= element.getPath1()%>" class="card-img">

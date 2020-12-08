@@ -7,3 +7,8 @@ and open the template in the editor.
     Created on : 28/11/2020, 08:53:29 PM
     Author     : dykeo
 */
+div{
+    width: 100px;
+    height: 500px;
+    background-color: darkcyan;
+}
