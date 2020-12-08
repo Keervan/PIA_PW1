@@ -121,4 +121,47 @@ public class ComentariosDAO {
         return 0;
     }
 
+    public static int setLike(int idCommentary) {
+        Connection con = null;
+        try {
+            con = DbConnection.getConnection();
+            String sql = "CALL setLikeCommentario(?);";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setInt(1, idCommentary);
+            return statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NoticiasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return 0;
+    }
+
+    public static int setDislike(int idCommentary) {
+        Connection con = null;
+        try {
+            con = DbConnection.getConnection();
+            String sql = "CALL setDislikeCommentario(?);";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setInt(1, idCommentary);
+            return statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NoticiasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return 0;
+    }
 }

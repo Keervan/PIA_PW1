@@ -68,7 +68,7 @@ CREATE TABLE `comentarios` (
 
 LOCK TABLES `comentarios` WRITE;
 /*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
-INSERT INTO `comentarios` VALUES (4,NULL,'2020-12-07 17:49:49','Zy Ez Chino No JALa',3,0,0);
+INSERT INTO `comentarios` VALUES (4,NULL,'2020-12-07 17:49:49','Zy Ez Chino No JALa',3,2,3);
 /*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +136,7 @@ CREATE TABLE `noticia` (
 
 LOCK TABLES `noticia` WRITE;
 /*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
-INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,0,0,'2020-12-06',1,NULL),(4,'Xiaomi Mi 10T Pro llega a Mexico: 144 Hz, 108 megapixeles y Snapdragon 865 por menos de 20,000 pesos','Se termino el misterio, el Xiaomi Mi 10T Pro ha llegado a Mexico para complementar la oferta de la compania en la gama mas alta del mercado, solo representada por el Xiaomi Mi 10 en nuestro pais.','El Xiaomi Mi 10T Pro tendra un precio en Mexico de 16,999 pesos, disponible a partir del 10 de diciembre en el catalogo de Telcel. Gracias a su distribucion con el operador tendra beneficios adicionales: 24 meses de garantia por defectos de fabrica y 6 meses de proteccion de pantalla. Este ultimo beneficio hace acreedor al usuario a un cambio completo de panel sin costo y sin preguntas, dentro de ese periodo de tiempo. \r\nPosteriormente el Mi 10T Pro llegara a otros puntos de venta, con el mismo beneficio de la garantiÂ­a extendida y la proteccion de pantalla.',2,'assets/images/image1607401238068.jpg','assets/images/image21607401238074.jpg','assets/images/image31607401238074.jpg',NULL,1,0,0,'2020-12-07',1,NULL);
+INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,2,4,'2020-12-06',1,NULL),(4,'Xiaomi Mi 10T Pro llega a Mexico: 144 Hz, 108 megapixeles y Snapdragon 865 por menos de 20,000 pesos','Se termino el misterio, el Xiaomi Mi 10T Pro ha llegado a Mexico para complementar la oferta de la compania en la gama mas alta del mercado, solo representada por el Xiaomi Mi 10 en nuestro pais.','El Xiaomi Mi 10T Pro tendra un precio en Mexico de 16,999 pesos, disponible a partir del 10 de diciembre en el catalogo de Telcel. Gracias a su distribucion con el operador tendra beneficios adicionales: 24 meses de garantia por defectos de fabrica y 6 meses de proteccion de pantalla. Este ultimo beneficio hace acreedor al usuario a un cambio completo de panel sin costo y sin preguntas, dentro de ese periodo de tiempo. \r\nPosteriormente el Mi 10T Pro llegara a otros puntos de venta, con el mismo beneficio de la garantiÂ­a extendida y la proteccion de pantalla.',2,'assets/images/image1607401238068.jpg','assets/images/image21607401238074.jpg','assets/images/image31607401238074.jpg',NULL,1,6,0,'2020-12-07',1,NULL);
 /*!40000 ALTER TABLE `noticia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -749,6 +749,78 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `setDislike` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `setDislike`(
+IN `pIdnoticia` int)
+BEGIN
+UPDATE `tecnovitate`.`noticia`
+SET
+`dislikes` = `dislikes` + 1
+WHERE `idnoticia` = pIdnoticia;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `setDislikeCommentario` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `setDislikeCommentario`(
+IN `pIdcomentarios` int)
+BEGIN
+UPDATE `tecnovitate`.`comentarios`
+SET
+`dislikes` = `dislikes` + 1
+WHERE `idcomentarios` = pIdcomentarios;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `setDislikeNoticia` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `setDislikeNoticia`(
+IN `pIdnoticia` int)
+BEGIN
+UPDATE `tecnovitate`.`noticia`
+SET
+`dislikes` = `dislikes` + 1
+WHERE `idnoticia` = pIdnoticia;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `setFav` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -771,6 +843,56 @@ VALUES
 (
 pUser,
 pNoticia);
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `setLikeCommentario` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `setLikeCommentario`(
+IN `pIdcomentarios` int)
+BEGIN
+UPDATE `tecnovitate`.`comentarios`
+SET
+`likes` = `likes` + 1
+WHERE `idcomentarios` = pIdcomentarios;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `setLikeNoticia` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `setLikeNoticia`(
+IN `pIdnoticia` int)
+BEGIN
+UPDATE `tecnovitate`.`noticia`
+SET
+`likes` = `likes` + 1
+WHERE `idnoticia` = pIdnoticia;
+
+
 
 END ;;
 DELIMITER ;
@@ -840,4 +962,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-07 22:32:13
+-- Dump completed on 2020-12-08  0:20:11

@@ -307,4 +307,48 @@ public class NoticiasDAO {
         }
         return 0;
     }
+    
+    public static int setLike(int idNews) {
+        Connection con = null;
+        try {
+            con = DbConnection.getConnection();
+            String sql = "CALL setLikeNoticia(?);";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setInt(1, idNews);
+            return statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NoticiasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return 0;
+    }
+    
+    public static int setDisike(int idNews) {
+        Connection con = null;
+        try {
+            con = DbConnection.getConnection();
+            String sql = "CALL setDislikeNoticia(?);";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setInt(1, idNews);
+            return statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NoticiasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return 0;
+    }
 }
