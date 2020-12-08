@@ -28,7 +28,6 @@
                     <%
                         for (Noticias not : noti) {
                     %>
-
                     <div class="col mb-4">
                         <div class="card h-100">
                             <a href="NoticiaCanceladoControlle?id=<%= not.getId()%>">
@@ -41,7 +40,6 @@
                             </a>
                         </div>
                     </div>
-
                     <%
                         }
                     %>

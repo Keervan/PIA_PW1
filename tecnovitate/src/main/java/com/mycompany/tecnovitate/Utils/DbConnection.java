@@ -30,7 +30,7 @@ public class DbConnection {
         // El nombre de usuario de su conexion
         dataSource.setUsername("root");
         // La contraseña del usuario de su conexion
-        dataSource.setPassword("admin");
+        dataSource.setPassword("koenokatachi7");
         // dataSource.setMaxIdle(0);
         // dataSource.setMaxActive(100);
     }

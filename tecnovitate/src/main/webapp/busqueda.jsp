@@ -22,10 +22,11 @@
             <div class="row">
 
 
-                <%
-                    for (Noticias noti : noticia) {
-                %>
+
                 <div class="row row-cols-1 row-cols-md-3">
+                    <%
+                        for (Noticias noti : noticia) {
+                    %>
                     <div class="col mb-4">
                         <div class="card h-100">
                             <a href="NoticiaMostrarController?id=<%= noti.getId()%>">
@@ -39,10 +40,10 @@
                             </a>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                 </div>
-                <%
-                    }
-                %>
 
 
             </div>

@@ -98,7 +98,7 @@
                     if (noticia.getPathv()
                             != null) {
                 %>
-                <video width="320" height="240" controls>
+                <video class="col-12"  controls>
                     <source src="<%= noticia.getPathv()%>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video> 

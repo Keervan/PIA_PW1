@@ -10,9 +10,11 @@
     Usuario sesion = (Usuario) session.getAttribute("logIn");
 %>
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary"style="background-color: rgb(15, 76, 155)">
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" style="background-color: rgb(15, 76, 155)">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="indexController"><img
@@ -110,7 +112,7 @@
         %>
         <form class="form-inline my-2 my-lg-0" method="POST" action="BuscadorController">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar noticia" aria-label="Search" name="buscar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #FFF;">Buscar</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #FFF;">Buscar</button>
         </form>
     </div>
 </nav>

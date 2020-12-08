@@ -10,6 +10,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     List<Noticias> noticias = (List<Noticias>) request.getAttribute("noticias");
+    List<Noticias> noticiasLikes = (List<Noticias>) request.getAttribute("noticiasLikes");
     Usuario sesion = (Usuario) session.getAttribute("logIn");
 %>
 <!DOCTYPE html>
@@ -24,75 +25,74 @@
             <div class="row input-group inline">
 
                 <%
-                    int i = 0;
                     for (Noticias element : noticias) {
                 %>
                 <div class="card bg-dark text-white col-12">
-                    <img class="card-img" src="<%= element.getPath1()%>" alt="Card image">
-                    <div class="card-img-overlay justify-content-md-center align-items-end">
-                        <h3 class="card-title"><%= element.getTitulo()%></h3>
-                        <h5 class="card-text"><%= element.getDescrip()%></h5>
-                        <p class="card-text"><%= element.getFecha()%></p>
-                    </div>
-                </div>                     
-
+                    <a href="NoticiaMostrarController?id=<%= element.getId()%>&idUser=<%if (sesion != null) {%><%=sesion.getIdUsua()%><%}%>">
+                        <img class="card-img" src="<%= element.getPath1()%>" alt="Card image">
+                        <div class="card-img-overlay justify-content-md-center align-items-end" id="Portada">
+                            <h3 class="card-title"><%= element.getTitulo()%></h3>
+                            <h5 class="card-text"><%= element.getDescrip()%></h5>
+                            <p class="card-text"><%= element.getFecha()%></p>
+                        </div>                     
+                    </a>
+                </div>
                 <%
                         break;
                     }
                 %>
-                <br/>
 
-                <div class="card-deck col-12 news-card justify-content-md-center">
+
+                <div class="card-deck mb-12">
+                    <h2 class="col-12 text-center">Los más gustados</h2>
                     <%
-                        for (Noticias element : noticias) {
+                        int i = 0;
+                        for (Noticias element : noticiasLikes) {
                     %>
-                    <a href="NoticiaMostrarController?id=<%= element.getId()%>&idUser=<%if (sesion != null) {%><%=sesion.getIdUsua()%><%}%>">
-                        <div class="row no-gutters col-4">
-
-                            <div class="card" style="width: 18rem; ">
-                                <img src="<%= element.getPath1()%>" class="card-img-top" alt="<%= element.getPath1()%>">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%= element.getTitulo()%></h5>
-                                    <p class="card-text"><%= element.getDescrip()%></p>
-                                    <a href="#" class="btn btn-primary">Ver noticia</a>
-                                </div>
+                    <div class="card col-lg-4 col-md-12 col-sm-12">
+                        <a href="NoticiaMostrarController?id=<%= element.getId()%>&idUser=<%if (sesion != null) {%><%=sesion.getIdUsua()%><%}%>">
+                            <img src="<%= element.getPath1()%>" class="card-img-top">
+                            <div class="card-body col-md-12 col-sm-12">
+                                <h5 class="card-title"><%= element.getTitulo()%></h5>
+                                <p class="card-text"><%= element.getDescrip()%></p>
+                                <p class="card-text"><small class="text-muted">Fecha publicación: <%= element.getFecha()%></small></p>
                             </div>
-
-                        </div>
-                    </a>
-
-                    <%}%>
-
+                        </a>
+                    </div>
+                    <%i++;
+                            if (i == 3) {
+                                break;
+                            }
+                        }%>
                 </div>
+
                 <div id="Tarjetas">
+                    <h2 class="text-center">Últimos agregados</h2>
                     <%
                         for (Noticias element : noticias) {
                     %>
                     <div class="card mb-3" style="max-width: 1500px">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img
-                                    src="<%= element.getPath1()%>"
-                                    class="card-img"
-                                    />
+                                <a href="NoticiaMostrarController?id=<%= element.getId()%>&idUser=<%if (sesion != null) {%><%=sesion.getIdUsua()%><%}%>">
+                                    <img src="<%= element.getPath1()%>" class="card-img"/>
+                                </a>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title"><%= element.getTitulo()%></h5>
-                                    <p class="card-text">
-                                        <%= element.getDescrip()%>
-                                    </p>
-                                    <p>
-                                        <a href="#" class="btn btn-primary">Ver noticia</a>
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted"><%= element.getFecha()%></small>
-                                    </p>
+                                    <a href="NoticiaMostrarController?id=<%= element.getId()%>&idUser=<%if (sesion != null) {%><%=sesion.getIdUsua()%><%}%>">
+                                        <h5 class="card-title"><%= element.getTitulo()%></h5>
+                                        <p class="card-text">
+                                            <%= element.getDescrip()%>
+                                        </p>
+                                        <p class="card-text">
+                                            <small class="text-muted"><%= element.getFecha()%></small>
+                                        </p>  
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <%}%>
                 </div>
 

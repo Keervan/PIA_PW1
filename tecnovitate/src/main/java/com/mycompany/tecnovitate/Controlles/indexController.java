@@ -25,7 +25,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "indexController", urlPatterns = {"/indexController"})
 public class indexController extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -40,6 +39,9 @@ public class indexController extends HttpServlet {
         List<Noticias> noticias = NoticiasDAO.getNews();
         request.setAttribute("noticias", noticias);
         
+        List<Noticias> noticiasLikes = NoticiasDAO.getNewsLikes();
+        request.setAttribute("noticiasLikes", noticiasLikes);
+        
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
@@ -51,6 +53,6 @@ public class indexController extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }
