@@ -2,9 +2,11 @@ C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\UsuarioDAO.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Noticias.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\NoticiasDAO.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\LikeNoticia.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaEstadoController.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\ComentariosController.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Comentarios.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\DislikeNoticia.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\FavsDAO.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Utils\DbConnection.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\CategoriasDAO.java
@@ -20,6 +22,8 @@ C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\FavoritosController.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaPendientController.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Utils\FileUtils.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\LikeComentario.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\DislikeComentario.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaPendienteController.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\ComentariosDAO.java
 C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\CerrarSesion.java
