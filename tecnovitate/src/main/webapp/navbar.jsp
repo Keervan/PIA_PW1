@@ -100,7 +100,7 @@
                 </li>
                 <li class="nav-item avatar">
                     <img src="<%= sesion.getPath()%>" class="rounded-circle z-depth-0"
-                         alt="avatar image" height="45">
+                         alt="avatar image" height="45" style="max-height: 45px;max-width: 45px;min-width: 45px;min-height: 45px">
                 </li>
                 <li class="nav-item avatar"></li>
             </ul>

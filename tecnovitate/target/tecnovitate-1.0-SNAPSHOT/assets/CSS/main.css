@@ -10,3 +10,42 @@ and open the template in the editor.
 body{
     background-color: darkcyan;
 }
+
+
+div.card-deck{
+  background-color: lightblue;  
+}
+h5.card-title{
+    color:blue;
+}
+
+p.card-text{
+   color: black;
+   text-decoration: infotext;
+}
+
+card.bg-dark.text-white.col-12{
+    color:white;
+}
+
+div#Tarjetas{
+    background-color: lightblue;
+}
+
+div#InfoP{
+    background-color: lightblue;
+}
+div#carouselExampleControls{
+     background-color:lightblue;
+}
+
+small#textsn{
+    color:white;
+}
+
+div#NotiForm{
+    background-color:lightblue;
+}
+div#ComentarySection{
+    background-color:beige;
+}
