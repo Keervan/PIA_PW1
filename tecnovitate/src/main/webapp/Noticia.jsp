@@ -28,7 +28,7 @@
         <jsp:include page="navbar.jsp"/>
         <div class="container">
             <div class="row">
-                
+
                 <h1 class="col-12"><%= noticia.getTitulo()%></h1>
                 <small class="col-4 text-muted">Categoría: <%= noticia.getCategoria().getCategoria()%> </small>
                 <small class="col-4 text-muted">Creado por: <%= noticia.getUser().getNombre_Usua()%> </small>
@@ -109,8 +109,7 @@
 
                 <div class="col-12 commentaries p-5">
                     <%
-                        if (sesion
-                                == null) {
+                        if (sesion == null) {
                     %>
                     <h5 class="mt-0">Anónimo</h5>
                     <%

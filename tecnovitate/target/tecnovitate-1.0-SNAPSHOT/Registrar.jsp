@@ -32,7 +32,9 @@
                         <label for="contra">Contraseña</label>
                         <input type="password" class="form-control" name="contra" id="contra"
                                placeholder="Ingrese una contraseña" required>
+                        <small class="form-text text-muted">De 8 a 30 caracteres, Una mayúscula, una mínuscula y un número</small>
                     </div>
+                    <div> <h3>Verifique que la información ingresada sea correcta</h3> </div>
                     <button class="btn btn-primary btn-sm btn-rounded" type="submit">Registrarse</button>
                 </form>
                 

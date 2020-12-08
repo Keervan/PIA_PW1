@@ -76,6 +76,18 @@ public class Noticias {
         this.cambio = cambio;
     }
 
+    public Noticias(int id, String titulo, String descrip, String noticia, Categorias categoria, String path1, String path2, String path3, String pathv) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descrip = descrip;
+        this.noticia = noticia;
+        this.categoria = categoria;
+        this.path1 = path1;
+        this.path2 = path2;
+        this.path3 = path3;
+        this.pathv = pathv;
+    }
+
     public int getId() {
         return id;
     }

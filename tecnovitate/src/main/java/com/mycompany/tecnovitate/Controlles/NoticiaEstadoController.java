@@ -62,8 +62,8 @@ public class NoticiaEstadoController extends HttpServlet {
         String idNews = request.getParameter("idNews");
         NoticiasDAO.setAceptado(Integer.parseInt(idNews));
         
-        request.getRequestDispatcher("NoticiaPendienteController").forward(request, response);
         
+        response.sendRedirect("NoticiaPendienteController");
     }
 
     /**
@@ -80,8 +80,8 @@ public class NoticiaEstadoController extends HttpServlet {
         String idNews = request.getParameter("idNews");
         String cambio = request.getParameter("cambio");
         NoticiasDAO.setCancelado(Integer.parseInt(idNews), cambio);
-         
-        request.getRequestDispatcher("NoticiaPendienteController").forward(request, response);
+        
+        response.sendRedirect("NoticiaPendienteController");
     }
 
     /**

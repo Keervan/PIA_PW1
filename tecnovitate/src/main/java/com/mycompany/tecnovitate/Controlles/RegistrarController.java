@@ -35,13 +35,36 @@ public class RegistrarController extends HttpServlet {
             throws ServletException, IOException {
         //                                      Deben de tener el name del input
         String nombUsua = request.getParameter("nombUsua");
-        String correo = request.getParameter("correo");
-        String contra = request.getParameter("contra");
-        //La clase que se construyó en models
-        Usuario user = new Usuario(nombUsua, correo, contra);
-        if(UsuarioDAO.Registrarse(user) == 1){
-            response.sendRedirect("indexController"); 
-        }else{           
+        if (nombUsua.length() > 2 && nombUsua.length() < 26) {
+            String correo = request.getParameter("correo");
+            String contra = request.getParameter("contra");
+            if (contra.length() > 7 && contra.length() < 31) {
+                int may = 0, min = 0, num = 0;
+
+                for (int i = 0; i < contra.length(); i++) {
+                    int clave = contra.charAt(i);
+                    if(clave > 47 && clave < 58){
+                        num++;
+                    } else if(clave > 64 && clave < 91){
+                        may++;
+                    } else if(clave > 96 && clave < 123){
+                        min++;
+                    }
+                }
+                if (may > 0 && min > 0 && num > 0) {
+                    Usuario user = new Usuario(nombUsua, correo, contra);
+                    if (UsuarioDAO.Registrarse(user) == 1) {
+                        response.sendRedirect("indexController");
+                    } else {
+                        response.sendRedirect("Registrar.jsp");
+                    }
+                } else {
+                    response.sendRedirect("Registrar.jsp");
+                }
+            } else {
+                response.sendRedirect("Registrar.jsp");
+            }
+        } else {
             response.sendRedirect("Registrar.jsp");
         }
     }

@@ -16,7 +16,7 @@ USE `tecnovitate`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-USE tecnovitate;
+
 --
 -- Table structure for table `categorias`
 --
@@ -59,7 +59,7 @@ CREATE TABLE `comentarios` (
   PRIMARY KEY (`idcomentarios`),
   KEY `fk_coment_usua_idx` (`usuario`),
   CONSTRAINT `fk_coment_usua` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +68,7 @@ CREATE TABLE `comentarios` (
 
 LOCK TABLES `comentarios` WRITE;
 /*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
+INSERT INTO `comentarios` VALUES (4,NULL,'2020-12-07 17:49:49','Zy Ez Chino No JALa',3,0,0);
 /*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +86,7 @@ CREATE TABLE `favs` (
   PRIMARY KEY (`idfavs`),
   KEY `fk_favs_noti_idx` (`noticia`),
   CONSTRAINT `fk_favs_noti` FOREIGN KEY (`noticia`) REFERENCES `noticia` (`idnoticia`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +95,7 @@ CREATE TABLE `favs` (
 
 LOCK TABLES `favs` WRITE;
 /*!40000 ALTER TABLE `favs` DISABLE KEYS */;
+INSERT INTO `favs` VALUES (3,1,3);
 /*!40000 ALTER TABLE `favs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +127,7 @@ CREATE TABLE `noticia` (
   KEY `fk_noti_usa_idx` (`user`),
   CONSTRAINT `fk_noti_cat` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`idcategorias`),
   CONSTRAINT `fk_noti_usa` FOREIGN KEY (`user`) REFERENCES `usuario` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +136,7 @@ CREATE TABLE `noticia` (
 
 LOCK TABLES `noticia` WRITE;
 /*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
-INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,0,0,'2020-12-06',1,NULL);
+INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,0,0,'2020-12-06',1,NULL),(4,'Xiaomi Mi 10T Pro llega a Mexico: 144 Hz, 108 megapixeles y Snapdragon 865 por menos de 20,000 pesos','Se termino el misterio, el Xiaomi Mi 10T Pro ha llegado a Mexico para complementar la oferta de la compania en la gama mas alta del mercado, solo representada por el Xiaomi Mi 10 en nuestro pais.','El Xiaomi Mi 10T Pro tendra un precio en Mexico de 16,999 pesos, disponible a partir del 10 de diciembre en el catalogo de Telcel. Gracias a su distribucion con el operador tendra beneficios adicionales: 24 meses de garantia por defectos de fabrica y 6 meses de proteccion de pantalla. Este ultimo beneficio hace acreedor al usuario a un cambio completo de panel sin costo y sin preguntas, dentro de ese periodo de tiempo. \r\nPosteriormente el Mi 10T Pro llegara a otros puntos de venta, con el mismo beneficio de la garantiÂ­a extendida y la proteccion de pantalla.',2,'assets/images/image1607401238068.jpg','assets/images/image21607401238074.jpg','assets/images/image31607401238074.jpg',NULL,1,0,0,'2020-12-07',1,NULL);
 /*!40000 ALTER TABLE `noticia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,8 +157,10 @@ CREATE TABLE `usuario` (
   `descripcion` text,
   `tipo_usua` int DEFAULT '1',
   PRIMARY KEY (`idusuario`),
-  UNIQUE KEY `idusuario_UNIQUE` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `idusuario_UNIQUE` (`idusuario`),
+  UNIQUE KEY `nombre_UNIQUE` (`nombre`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +169,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Moderador','moderador@moderador.com','moderador','fb.com/moderador','assets/images/foto1607247458368.jpg','Soy el moderador xd',2),(2,'Lessli','lessli@gmail.com','456',NULL,'assets/image/anonimo.jpg',NULL,1),(3,'Angel','angel@gmail.com','123',NULL,'assets/image/anonimo.jpg',NULL,1),(4,'Alejandro','alejandro@hotmail.com','789','','assets/images/foto1607247940761.jpg','',1);
+INSERT INTO `usuario` VALUES (1,'Moderador','moderador@moderador.com','moderador','fb.com/moderador','assets/images/foto1607247458368.jpg','Soy el moderador xd',2),(2,'Lessli','lessli@gmail.com','456',NULL,'assets/image/anonimo.jpg',NULL,1),(3,'Angel','angel@gmail.com','123',NULL,'assets/image/anonimo.jpg',NULL,1),(4,'Alejandro','alejandro@hotmail.com','789','','assets/images/foto1607247940761.jpg','',1),(7,'prueba','prueba@gmail.com','Prueba123',NULL,'assets/image/anonimo.jpg',NULL,1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,7 +189,7 @@ UNLOCK TABLES;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `editarUsua`(
 IN `pNombre` varchar(60),
 IN `pEmail` varchar(60),
@@ -205,8 +209,9 @@ SET
 `avatar` = pAvatar,
 `descripcion` = pDescripcion
 WHERE `idusuario` = pIdusuario
-AND `contraseña` = pContraseña;
-END $$
+AND
+`contraseña` = pContraseña;
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -221,14 +226,14 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarComentario`(
 IN `pIdcomentarios` int)
 BEGIN
 DELETE FROM `tecnovitate`.`comentarios`
 WHERE `idcomentarios` = pIdcomentarios;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -243,14 +248,14 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarFav`(
 IN `pIdfavs` int)
 BEGIN
 DELETE FROM `tecnovitate`.`favs`
 WHERE `idfavs` = pIdfavs;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -265,7 +270,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getCategoria`(
 IN `pIdcategorias` int)
 BEGIN
@@ -274,7 +279,7 @@ SELECT `categorias`.`idcategorias`,
 FROM `tecnovitate`.`categorias`
 where `categorias`.`idcategorias` = pIdcategorias;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -289,14 +294,14 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER &&
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getCategorias`()
 BEGIN
 SELECT `categorias`.`idcategorias`,
     `categorias`.`categoria`
 FROM `tecnovitate`.`categorias`;
 
-END &&
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -311,7 +316,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER &&
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getComentariosByNew`(
 IN `pIdNew` int)
 BEGIN
@@ -325,7 +330,7 @@ SELECT `comentarios`.`idcomentarios`,
 FROM `tecnovitate`.`comentarios`
 where `comentarios`.`noticia` = pIdNew;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -340,7 +345,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getFavs`(
 IN `pUser` int)
 BEGIN
@@ -350,7 +355,7 @@ SELECT `favs`.`idfavs`,
 FROM `tecnovitate`.`favs`
 where `favs`.`user` = pUser;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -365,7 +370,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getFavsAll`()
 BEGIN
 SELECT `favs`.`idfavs`,
@@ -373,7 +378,43 @@ SELECT `favs`.`idfavs`,
     `favs`.`noticia`
 FROM `tecnovitate`.`favs`;
 
-END $$
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `getNotiCancelados` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getNotiCancelados`(
+IN `pUser` int)
+BEGIN
+SELECT `noticia`.`idnoticia`,
+    `noticia`.`titulo`,
+    `noticia`.`descripcion`,
+    `noticia`.`noticia`,
+    `noticia`.`categoria`,
+    `noticia`.`ima1`,
+    `noticia`.`ima2`,
+    `noticia`.`ima3`,
+    `noticia`.`video`,
+    `noticia`.`estadoNoticia`,
+    `noticia`.`likes`,
+    `noticia`.`dislikes`,
+    `noticia`.`fecha`,
+    `noticia`.`user`
+FROM `tecnovitate`.`noticia`
+where `noticia`.`estadoNoticia` = 2
+AND `user` = pUser;
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -388,9 +429,9 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getNoticia`(
-IN `idnoticia` int)
+IN `pIdnoticia` int)
 BEGIN
 SELECT `noticia`.`idnoticia`,
     `noticia`.`titulo`,
@@ -407,9 +448,10 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`fecha`,
     `noticia`.`user`,
     `noticia`.`cambio`
-FROM `tecnovitate`.`noticia`;
+FROM `tecnovitate`.`noticia`
+WHERE `idnoticia` = pIdnoticia;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -424,7 +466,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getNoticias`()
 BEGIN
 SELECT `noticia`.`idnoticia`,
@@ -444,7 +486,7 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`cambio`
 FROM `tecnovitate`.`noticia`
 WHERE `noticia`.`estadoNoticia` = 1;
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -459,7 +501,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getNotiPendientes`()
 BEGIN
 SELECT `noticia`.`idnoticia`,
@@ -478,7 +520,7 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`user`
 FROM `tecnovitate`.`noticia`
 where `noticia`.`estadoNoticia` = 0;
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -493,7 +535,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `iniSesion`(
 IN `pEmail` varchar(60),
 IN `pContraseña` varchar(45))
@@ -511,7 +553,7 @@ where `usuario`.`email` = pEmail
 and
     `usuario`.`contraseña` = pContraseña;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -526,7 +568,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `iniSesionId`(
 IN `pIdusuario` int)
 BEGIN
@@ -540,7 +582,49 @@ SELECT `usuario`.`idusuario`,
     `usuario`.`tipo_usua`
 FROM `tecnovitate`.`usuario`
 Where `usuario`.`idusuario` = pIdusuario;
-END $$
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `modiNoti` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `modiNoti`(
+IN `pTitulo` text,
+IN `pDescripcion` text,
+IN `pNoticia` text,
+IN `pCategoria` int,
+IN `pIma1` varchar(99),
+IN `pIma2` varchar(99),
+IN `pIma3` varchar(99),
+IN `pVideo` varchar(99),
+IN `idNoti` int)
+BEGIN
+UPDATE `tecnovitate`.`noticia`
+SET
+`titulo` = pTitulo,
+`descripcion` = pDescripcion,
+`noticia` = pNoticia,
+`categoria` = pCategoria,
+`ima1` = pIma1,
+`ima2` = pIma2,
+`ima3` = pIma3,
+`video` = pVideo,
+`estadoNoticia` = 0,
+`fecha` = NOW(),
+`cambio` = NULL
+WHERE `idnoticia` = idNoti;
+
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -555,7 +639,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registrarse`(
 IN `pNombre` varchar(60),
 IN `pEmail` varchar(60),
@@ -575,7 +659,7 @@ pEmail,
 pContraseña,
 pAvatar);
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -590,16 +674,17 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setAceptado`(
 IN `pIdnoticia` int)
 BEGIN
 UPDATE `tecnovitate`.`noticia`
 SET
-`estadoNoticia` = 1
+`estadoNoticia` = 1,
+`cambio` = NULL
 WHERE `idnoticia` = pIdnoticia;
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -614,15 +699,17 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setCancelado`(
-IN `pIdnoticia` int)
+IN `pIdnoticia` int,
+IN `pCambio` text)
 BEGIN
 UPDATE `tecnovitate`.`noticia`
 SET
-`estadoNoticia` = 2
+`estadoNoticia` = 2,
+`cambio` = pCambio
 WHERE `idnoticia` = pIdnoticia;
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -637,7 +724,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setComentario`(
 IN `pCometario` text,
 IN `pUsuario` int,
@@ -656,7 +743,7 @@ NOW(),
 pCometario,
 pNoticia);
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -671,7 +758,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setFav`(
 IN `pUser` int,
 IN `pNoticia` int)
@@ -685,7 +772,7 @@ VALUES
 pUser,
 pNoticia);
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -700,7 +787,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER $$
+DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `setNoticia`(
 IN `pTitulo` text,
 IN `pDescripcion` text,
@@ -737,7 +824,7 @@ pVideo,
 NOW(),
 pUser);
 
-END $$
+END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -753,4 +840,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-07  1:52:14
+-- Dump completed on 2020-12-07 22:32:13

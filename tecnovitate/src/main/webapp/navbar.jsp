@@ -37,6 +37,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="NoticiaCrearController">Crear Nueva Noticia</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="NoticiaCancelados?idCreador=<%= sesion.getIdUsua()%>" >Mis Noticias Pendientes</a>
+            </li>
             <%
                 }
             %>
