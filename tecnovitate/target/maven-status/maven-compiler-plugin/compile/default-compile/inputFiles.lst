@@ -1,33 +1,33 @@
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Categorias.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaCrearController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaEstadoController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaPendientController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\LikeNoticia.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\FavsDAO.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\IniSesionController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\BuscadorController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\ComentariosDAO.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\editUsuaController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\FavoritosController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\DislikeNoticia.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\RegistrarController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Noticias.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\LikeComentario.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaMostrarController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\DislikeComentario.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\CerrarSesion.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaPendienteController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaCancelados.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\ComentariosBorrarController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\ComentariosController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Favs.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Utils\DbConnection.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\CategoriasDAO.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Comentarios.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\NoticiasDAO.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Usuario.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaCanceladoControlle.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\UsuarioDAO.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\FavoritosBorrarController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\indexController.java
-D:\Documentos\LMAD\7 Semestre\PW\PIA_PW\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Utils\FileUtils.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\editUsuaController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\UsuarioDAO.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Noticias.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\NoticiasDAO.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\LikeNoticia.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaEstadoController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\ComentariosController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Comentarios.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\BuscadorController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\DislikeNoticia.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\FavsDAO.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Utils\DbConnection.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\CategoriasDAO.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\FavoritosBorrarController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaCrearController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Favs.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaMostrarController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\IniSesionController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Usuario.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\ComentariosBorrarController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaCanceladoControlle.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\RegistrarController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\FavoritosController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaPendientController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Utils\FileUtils.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\LikeComentario.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\DislikeComentario.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaPendienteController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\DAO\ComentariosDAO.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\CerrarSesion.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\indexController.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Controlles\NoticiaCancelados.java
+C:\Users\dykeo\Documents\GitHub\PIA_PW1\tecnovitate\src\main\java\com\mycompany\tecnovitate\Models\Categorias.java

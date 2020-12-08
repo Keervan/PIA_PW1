@@ -35,11 +35,13 @@
                 <small class="col-2 text-muted"> el día <%= noticia.getFecha()%> </small>
                 <%
                     if (sesion != null) {
-                        for (Favs fav : favs) {
-                            if (fav.getIdNoti().getId() == noticia.getId()) {
-                                band = true;
-                                id = fav.getId();
-                                break;
+                        if (favs.size() != 0) {
+                            for (Favs fav : favs) {
+                                if (fav.getIdNoti().getId() == noticia.getId()) {
+                                    band = true;
+                                    id = fav.getId();
+                                    break;
+                                }
                             }
                         }
                         if (band == true) {%>

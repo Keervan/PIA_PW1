@@ -39,17 +39,23 @@ public class NoticiaMostrarController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String idNews = request.getParameter("id");
-               
-       Noticias noticia = NoticiasDAO.getNew(Integer.parseInt(idNews, 10));
-       request.setAttribute("noticia", noticia);
-       
-       List<Comentarios> commentaries = ComentariosDAO.getCommentariesByNew(Integer.parseInt(idNews, 10));
-       request.setAttribute("Commentaries", commentaries);
-       
-      List<Favs> favs = FavsDAO.getFavsAll();
-      request.setAttribute("favs", favs);
-       
-       request.getRequestDispatcher("Noticia.jsp").forward(request, response);
+        String id = request.getParameter("idUser");
+
+        Noticias noticia = NoticiasDAO.getNew(Integer.parseInt(idNews, 10));
+        request.setAttribute("noticia", noticia);
+
+        List<Comentarios> commentaries = ComentariosDAO.getCommentariesByNew(Integer.parseInt(idNews, 10));
+        request.setAttribute("Commentaries", commentaries);
+        
+        List<Favs> favs = null;
+        if (id.equals("")) {
+            favs = FavsDAO.getFavsAll();
+        } else {
+            favs = FavsDAO.getFavs(Integer.parseInt(id, 10));
+        }
+        request.setAttribute("favs", favs);
+
+        request.getRequestDispatcher("Noticia.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Sólo GET usado">
@@ -65,17 +71,23 @@ public class NoticiaMostrarController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String idNews = request.getParameter("id");
-               
-       Noticias noticia = NoticiasDAO.getNew(Integer.parseInt(idNews, 10));
-       request.setAttribute("noticia", noticia);
-       
-       List<Comentarios> commentaries = ComentariosDAO.getCommentariesByNew(Integer.parseInt(idNews, 10));
-       request.setAttribute("Commentaries", commentaries);
-       
-      List<Favs> favs = FavsDAO.getFavsAll();
-      request.setAttribute("favs", favs);
-       
-       request.getRequestDispatcher("Noticia.jsp").forward(request, response);
+        String id = request.getParameter("idUser");
+
+        Noticias noticia = NoticiasDAO.getNew(Integer.parseInt(idNews, 10));
+        request.setAttribute("noticia", noticia);
+
+        List<Comentarios> commentaries = ComentariosDAO.getCommentariesByNew(Integer.parseInt(idNews, 10));
+        request.setAttribute("Commentaries", commentaries);
+        
+        List<Favs> favs = null;
+        if (id.equals("")) {
+            favs = FavsDAO.getFavsAll();
+        } else {
+            favs = FavsDAO.getFavs(Integer.parseInt(id, 10));
+        }
+        request.setAttribute("favs", favs);
+
+        request.getRequestDispatcher("Noticia.jsp").forward(request, response);
     }
 
     /**

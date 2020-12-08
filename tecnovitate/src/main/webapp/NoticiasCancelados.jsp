@@ -21,6 +21,9 @@
         <div class="container">
             <div class="row">
 
+                <% if (noti.size() == 0) { %>
+                <h3>No tienes noticias por modificar</h3>
+                <% } else {%>
                 <div class="row row-cols-1 row-cols-md-3">
                     <%
                         for (Noticias not : noti) {
@@ -43,6 +46,7 @@
                         }
                     %>
                 </div>
+                <% }%>
 
             </div>
         </div>

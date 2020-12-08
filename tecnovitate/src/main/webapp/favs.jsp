@@ -21,14 +21,16 @@
         <div class="container">
             <div class="row">
 
-
-                <%
-                    for (Favs fav : favs) {
-                %>
+                <%if (favs.size() == 0) { %>
+                <h3>No tienes favoritos marcados</h3>
+                <% } else { %>
                 <div class="row row-cols-1 row-cols-md-3">
+                    <%
+                        for (Favs fav : favs) {
+                    %>
                     <div class="col mb-4">
                         <div class="card h-100">
-                            <a href="NoticiaMostrarController?id=<%= fav.getIdNoti().getId()%>">
+                            <a href="NoticiaMostrarController?id=<%= fav.getIdNoti().getId()%>&idUser=<%= fav.getIdUser()%>">
                                 <img src="<%= fav.getIdNoti().getPath1()%>" class="card-img-top">
                                 <div class="card-body">
                                     <h5 class="card-title"><%= fav.getIdNoti().getTitulo()%></h5>
@@ -40,11 +42,12 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <%
-                    }
-                %>
 
+                    <%
+                        }
+                    %>
+                </div>
+                <% }%>
 
             </div>
         </div>
