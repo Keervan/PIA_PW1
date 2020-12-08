@@ -16,13 +16,13 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="indexController"><img
-          src="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
-          width="25"
-          height="25"
-          class="d-inline-block align-top"
-          alt="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
-          loading="lazy"
-        />TECNOVITATE <span class="sr-only">(current)</span></a>
+                        src="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
+                        width="25"
+                        height="25"
+                        class="d-inline-block align-top"
+                        alt="https://img.pngio.com/new-svg-image-t-png-2000_2000.png"
+                        loading="lazy"
+                        />TECNOVITATE <span class="sr-only">(current)</span></a>
             </li>
             <%
                 if (sesion != null) {
@@ -108,9 +108,9 @@
         <%
             }
         %>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar noticia" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #FFF;">Buscar</button>
+        <form class="form-inline my-2 my-lg-0" method="POST" action="BuscadorController">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar noticia" aria-label="Search" name="buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #FFF;">Buscar</button>
         </form>
     </div>
 </nav>

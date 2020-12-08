@@ -59,7 +59,7 @@ CREATE TABLE `comentarios` (
   PRIMARY KEY (`idcomentarios`),
   KEY `fk_coment_usua_idx` (`usuario`),
   CONSTRAINT `fk_coment_usua` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `comentarios` (
 
 LOCK TABLES `comentarios` WRITE;
 /*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
-INSERT INTO `comentarios` VALUES (4,NULL,'2020-12-07 17:49:49','Zy Ez Chino No JALa',3,2,3);
+INSERT INTO `comentarios` VALUES (5,NULL,'2020-12-08 01:39:42','Cometario de prueba',3,3,2),(6,7,'2020-12-08 01:41:24','xd',4,0,0);
 /*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `favs` (
   PRIMARY KEY (`idfavs`),
   KEY `fk_favs_noti_idx` (`noticia`),
   CONSTRAINT `fk_favs_noti` FOREIGN KEY (`noticia`) REFERENCES `noticia` (`idnoticia`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `favs` (
 
 LOCK TABLES `favs` WRITE;
 /*!40000 ALTER TABLE `favs` DISABLE KEYS */;
-INSERT INTO `favs` VALUES (3,1,3);
+INSERT INTO `favs` VALUES (7,1,5),(9,1,4),(10,1,3);
 /*!40000 ALTER TABLE `favs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +127,7 @@ CREATE TABLE `noticia` (
   KEY `fk_noti_usa_idx` (`user`),
   CONSTRAINT `fk_noti_cat` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`idcategorias`),
   CONSTRAINT `fk_noti_usa` FOREIGN KEY (`user`) REFERENCES `usuario` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `noticia` (
 
 LOCK TABLES `noticia` WRITE;
 /*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
-INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,2,4,'2020-12-06',1,NULL),(4,'Xiaomi Mi 10T Pro llega a Mexico: 144 Hz, 108 megapixeles y Snapdragon 865 por menos de 20,000 pesos','Se termino el misterio, el Xiaomi Mi 10T Pro ha llegado a Mexico para complementar la oferta de la compania en la gama mas alta del mercado, solo representada por el Xiaomi Mi 10 en nuestro pais.','El Xiaomi Mi 10T Pro tendra un precio en Mexico de 16,999 pesos, disponible a partir del 10 de diciembre en el catalogo de Telcel. Gracias a su distribucion con el operador tendra beneficios adicionales: 24 meses de garantia por defectos de fabrica y 6 meses de proteccion de pantalla. Este ultimo beneficio hace acreedor al usuario a un cambio completo de panel sin costo y sin preguntas, dentro de ese periodo de tiempo. \r\nPosteriormente el Mi 10T Pro llegara a otros puntos de venta, con el mismo beneficio de la garantiÂ­a extendida y la proteccion de pantalla.',2,'assets/images/image1607401238068.jpg','assets/images/image21607401238074.jpg','assets/images/image31607401238074.jpg',NULL,1,6,0,'2020-12-07',1,NULL);
+INSERT INTO `noticia` VALUES (3,'OnePlus 8T, anÃ¡lisis: olvidarse de cargar el mÃ³vil sin renunciar a la fluidez de los 120 Hz','OnePlus ya avanzÃ³ sobre su segunda ronda que no habrÃ­a versiÃ³n Pro, de modo que al mÃ¡s reciente OnePlus Nord le esperaba un solo hermano. ','Precisamente es el que nos ocupa en este artÃ­culo, el anÃ¡lisis del OnePlus 8T, en el que comprobamos a fondo cÃ³mo ha evolucionado la experiencia \"Never Settle\" tras unos meses.\r\n\r\nYa que, aunque estrictamente hablando es el heredero directo del OnePlus 7T, el mÃ³vil llega seis meses despuÃ©s de los OnePlus 8 y OnePlus 8 Pro, y lo hace manteniendo parte del ADN de gama alta de sus predecesores pero con novedades entre sus caracterÃ­sticas.',2,'assets/images/image1607247630200.jpg','assets/images/image21607247630200.jpg','assets/images/image31607247630200.jpg',NULL,1,5,4,'2020-12-06',1,NULL),(4,'Xiaomi Mi 10T Pro llega a Mexico: 144 Hz, 108 megapixeles y Snapdragon 865 por menos de 20,000 pesos','Se termino el misterio, el Xiaomi Mi 10T Pro ha llegado a Mexico para complementar la oferta de la compania en la gama mas alta del mercado, solo representada por el Xiaomi Mi 10 en nuestro pais.','El Xiaomi Mi 10T Pro tendra un precio en Mexico de 16,999 pesos, disponible a partir del 10 de diciembre en el catalogo de Telcel. Gracias a su distribucion con el operador tendra beneficios adicionales: 24 meses de garantia por defectos de fabrica y 6 meses de proteccion de pantalla. Este ultimo beneficio hace acreedor al usuario a un cambio completo de panel sin costo y sin preguntas, dentro de ese periodo de tiempo. \r\nPosteriormente el Mi 10T Pro llegara a otros puntos de venta, con el mismo beneficio de la garantiÂ­a extendida y la proteccion de pantalla.',2,'assets/images/image1607401238068.jpg','assets/images/image21607401238074.jpg','assets/images/image31607401238074.jpg',NULL,1,7,0,'2020-12-07',1,NULL),(5,'Que es el software liquido y que aplicaciones tiene en la vida real','No lo notas y de hecho esta hecho asiÂ­ a proposito: para que no te des cuenta de que sucede a tu alrededor mientras tu disfrutas de una vida tecnologica plena','Hace tan solo unos aÃÂ±os, lanzar cualquier actualizaciÃÂ³n de una aplicaciÃÂ³n de ÃÂ©xito o de un programa informÃÂ¡tico era el momento de la verdad para sus creadores.\r\n\r\nSe paraba el tiempo.\r\n\r\nLos programadores, los equipos de sistemas y los directivos mantenÃÂ­an la respiraciÃÂ³n durante segundos para darle al botÃÂ³n de lanzar y esperar, con los dedos cruzados, que no hubiera ningÃÂºn fallo.',4,'assets/images/image1607412682717.jpg','assets/images/image21607412682719.jpg','assets/images/image31607412682721.jpg',NULL,1,0,0,'2020-12-08',1,NULL);
 /*!40000 ALTER TABLE `noticia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +160,7 @@ CREATE TABLE `usuario` (
   UNIQUE KEY `idusuario_UNIQUE` (`idusuario`),
   UNIQUE KEY `nombre_UNIQUE` (`nombre`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,7 +169,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Moderador','moderador@moderador.com','moderador','fb.com/moderador','assets/images/foto1607247458368.jpg','Soy el moderador xd',2),(2,'Lessli','lessli@gmail.com','456',NULL,'assets/image/anonimo.jpg',NULL,1),(3,'Angel','angel@gmail.com','123',NULL,'assets/image/anonimo.jpg',NULL,1),(4,'Alejandro','alejandro@hotmail.com','789','','assets/images/foto1607247940761.jpg','',1),(7,'prueba','prueba@gmail.com','Prueba123',NULL,'assets/image/anonimo.jpg',NULL,1);
+INSERT INTO `usuario` VALUES (1,'Moderador','moderador@moderador.com','moderador','fb.com/moderador','assets/images/foto1607247458368.jpg','Soy el moderador xd',3),(2,'Lessli','lessli@gmail.com','456',NULL,'assets/image/anonimo.jpg',NULL,1),(3,'Angel','angel@gmail.com','123',NULL,'assets/image/anonimo.jpg',NULL,1),(4,'Alejandro','alejandro@hotmail.com','789','','assets/images/foto1607247940761.jpg','',1),(7,'prueba','prueba@gmail.com','Prueba123',NULL,'assets/image/anonimo.jpg',NULL,1),(8,'Admin','admin@admin.com','admin',NULL,'assets/image/anonimo.jpg',NULL,2),(9,'Creador','creador@creador.com','creador',NULL,'assets/image/anonimo.jpg',NULL,4),(10,'Editor','editor@editor.com','editor',NULL,'assets/image/anonimo.jpg',NULL,5),(11,NULL,NULL,NULL,NULL,'assets/image/anonimo.jpg',NULL,1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,6 +180,47 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'tecnovitate'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `buscarNoticia` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscarNoticia`(
+IN `Buscador` varchar(50))
+BEGIN
+SELECT N.`idnoticia`,
+    N.`titulo`,
+    N.`descripcion`,
+    N.`noticia`,
+    N.`categoria`,
+    N.`ima1`,
+    N.`ima2`,
+    N.`ima3`,
+    N.`video`,
+    N.`estadoNoticia`,
+    N.`likes`,
+    N.`dislikes`,
+    N.`fecha`,
+    N.`user`,
+    N.`cambio`
+FROM `tecnovitate`.`noticia` N
+join `tecnovitate`.`categorias` C ON N.`categoria` = C.`idcategorias`
+join `tecnovitate`.`usuario` U ON N.`user` = U.`idusuario`
+WHERE N.`titulo` LIKE CONCAT('%', Buscador, '%')
+OR N.`descripcion` LIKE CONCAT('%', Buscador, '%')
+OR C.`categoria` LIKE CONCAT('%', Buscador, '%')
+OR U.`nombre` LIKE CONCAT('%', Buscador, '%');
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `editarUsua` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -328,7 +369,8 @@ SELECT `comentarios`.`idcomentarios`,
     `comentarios`.`likes`,
     `comentarios`.`dislikes`
 FROM `tecnovitate`.`comentarios`
-where `comentarios`.`noticia` = pIdNew;
+where `comentarios`.`noticia` = pIdNew
+Order by `likes` DESC;
 
 END ;;
 DELIMITER ;
@@ -376,7 +418,8 @@ BEGIN
 SELECT `favs`.`idfavs`,
     `favs`.`user`,
     `favs`.`noticia`
-FROM `tecnovitate`.`favs`;
+FROM `tecnovitate`.`favs`
+order by `idfavs` desc;
 
 END ;;
 DELIMITER ;
@@ -485,7 +528,8 @@ SELECT `noticia`.`idnoticia`,
     `noticia`.`user`,
     `noticia`.`cambio`
 FROM `tecnovitate`.`noticia`
-WHERE `noticia`.`estadoNoticia` = 1;
+WHERE `noticia`.`estadoNoticia` = 1
+order by `fecha` desc;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -962,4 +1006,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-08  0:20:11
+-- Dump completed on 2020-12-08  3:01:19

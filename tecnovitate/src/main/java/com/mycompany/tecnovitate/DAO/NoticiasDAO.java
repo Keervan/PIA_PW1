@@ -351,4 +351,50 @@ public class NoticiasDAO {
         }
         return 0;
     }
+    
+    public static List<Noticias> buscar(String buscar) {
+        List<Noticias> news = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = DbConnection.getConnection();
+            String sql = "CALL buscarNoticia(?);";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setString(1, buscar);
+            ResultSet result = statement.executeQuery();
+            while (result.next()) {
+                int id = result.getInt(1);
+                String title = result.getString(2);
+                String description = result.getString(3);
+                String noticia = result.getString(4);
+                int idCategory = result.getInt(5);
+                String pathImage1 = result.getString(6);
+                String pathImage2 = result.getString(7);
+                String pathImage3 = result.getString(8);
+                String pathV = result.getString(9);
+                int estado = result.getInt(10);
+                int likes = result.getInt(11);
+                int dislikes = result.getInt(12);
+                Date fecha = result.getDate(13);
+                int idUser = result.getInt(14);
+                Categorias category = CategoriasDAO.getCategoria(idCategory);
+                Usuario user = UsuarioDAO.IniSesion(idUser);
+                news.add(new Noticias(id, title, description, noticia, category, pathImage1, pathImage2, pathImage3, pathV,
+                        estado, likes, dislikes, fecha, user));
+            }
+            return news;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NoticiasDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
+        return news;
+    }
+    
 }
