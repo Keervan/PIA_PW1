@@ -6,6 +6,7 @@
 package com.mycompany.tecnovitate.Controlles;
 
 import com.mycompany.tecnovitate.DAO.ComentariosDAO;
+import com.mycompany.tecnovitate.DAO.NoticiasDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -59,12 +60,15 @@ public class DislikeComentario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String idUser = request.getParameter("idUser");
         String idCom = request.getParameter("idCom");
         String idNew = request.getParameter("idNew");
         ComentariosDAO.setDislike(Integer.parseInt(idCom));
         
-        response.sendRedirect("NoticiaMostrarController?id=" + idNew);
+        if(idUser.equals("")){
+            idUser = "0";
+        }
+        response.sendRedirect("NoticiaMostrarController?id=" + idNew + "&idUser=" + idUser);
     }
 
     /**

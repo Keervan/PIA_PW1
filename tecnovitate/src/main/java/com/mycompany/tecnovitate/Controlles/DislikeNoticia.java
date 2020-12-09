@@ -59,10 +59,14 @@ public class DislikeNoticia extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String idUser = request.getParameter("idUser");
         String idNew = request.getParameter("idNew");
         NoticiasDAO.setDisike(Integer.parseInt(idNew));
         
-        response.sendRedirect("NoticiaMostrarController?id=" + idNew);
+        if(idUser.equals("")){
+            idUser = "0";
+        }
+        response.sendRedirect("NoticiaMostrarController?id=" + idNew + "&idUser=" + idUser);
     }
 
     /**

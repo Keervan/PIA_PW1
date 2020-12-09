@@ -35,10 +35,12 @@ public class ComentariosBorrarController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
         String idNews = request.getParameter("idNews");
+        String idUser = request.getParameter("idUser");
         
         ComentariosDAO.deleteCommentary(Integer.parseInt(id, 10));
         
-        request.getRequestDispatcher("NoticiaMostrarController?id=" + idNews).forward(request, response);
+        
+        request.getRequestDispatcher("NoticiaMostrarController?id=" + idNews + "&idUser=" + idUser).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

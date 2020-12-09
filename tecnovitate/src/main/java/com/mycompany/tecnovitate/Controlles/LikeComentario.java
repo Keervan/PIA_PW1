@@ -59,11 +59,15 @@ public class LikeComentario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String idUser = request.getParameter("idUser");
         String idCom = request.getParameter("idCom");
         String idNew = request.getParameter("idNew");
         ComentariosDAO.setLike(Integer.parseInt(idCom));
         
-        response.sendRedirect("NoticiaMostrarController?id=" + idNew);
+        if(idUser.equals("")){
+            idUser = "0";
+        }
+        response.sendRedirect("NoticiaMostrarController?id=" + idNew + "&idUser=" + idUser);
     }
 
     /**

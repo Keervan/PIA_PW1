@@ -48,7 +48,7 @@ public class NoticiaMostrarController extends HttpServlet {
         request.setAttribute("Commentaries", commentaries);
         
         List<Favs> favs = null;
-        if (id.equals("")) {
+        if (id.equals("") || id.equals(null)) {
             favs = FavsDAO.getFavsAll();
         } else {
             favs = FavsDAO.getFavs(Integer.parseInt(id, 10));
@@ -80,7 +80,7 @@ public class NoticiaMostrarController extends HttpServlet {
         request.setAttribute("Commentaries", commentaries);
         
         List<Favs> favs = null;
-        if (id.equals("")) {
+        if (id.equals("") || id.equals(null)) {
             favs = FavsDAO.getFavsAll();
         } else {
             favs = FavsDAO.getFavs(Integer.parseInt(id, 10));
